@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "bin/brain-games": ["bin/brain-games"],
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Ksenia Krokhaleva",
+            "email": "karibzhanova55@yandex.ru"
+        }
+    ],
+    "require": {}
+}
