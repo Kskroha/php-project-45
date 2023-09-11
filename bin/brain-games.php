@@ -12,6 +12,3 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
-
-echo 'Welcome to the Brain Games!';
-print_r('Welcome to the Brain Games!');
