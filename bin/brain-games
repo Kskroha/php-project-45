@@ -2,9 +2,9 @@
 
 <?php
 
-// Путь который будет использован при глобальной установке пакета
+use BrainGames\Cli;
+
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
-// Путь для локальной работы с проектом
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
 
 if (file_exists($autoloadPath1)) {
@@ -12,3 +12,5 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+
+\BrainGames\Cli\greetUser();
