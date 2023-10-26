@@ -1,6 +1,8 @@
 {
     "name": "hexlet/code",
-    "bin/brain-games": ["bin/brain-games"],
+    "bin": [
+        "bin/brain-games"
+    ],
     "autoload": {
         "files": [
             "src/Cli.php"
@@ -12,5 +14,7 @@
             "email": "karibzhanova55@yandex.ru"
         }
     ],
+    "description": "hexlet study project",
+    "license": "MIT",
     "require": {}
 }
