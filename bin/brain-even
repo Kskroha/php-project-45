@@ -1,0 +1,70 @@
+#!/usr/bin/env php
+
+<?php
+
+use function cli\line;
+use function cli\prompt;
+
+$autoloadPath1 = __DIR__ . '/../../../autoload.php';
+$autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
+
+if (file_exists($autoloadPath1)) {
+    require_once $autoloadPath1;
+} else {
+    require_once $autoloadPath2;
+}
+
+$START = 1;
+$END = 100;
+
+$getRandomNumber = function () use ($START, $END) {
+    return rand($START, $END);
+};
+
+function isEven($number)
+{
+    return $number % 2 === 0;
+}
+
+function checkNumber($number)
+{
+    return isEven($number) ? 'yes' : 'no';
+}
+
+function getUserName()
+{
+    line('Welcome to the Brain Game!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    return $name;
+}
+
+function congratulate($name)
+{
+    return line("Congratulations, %s", $name);
+}
+
+$startGame = function () use ($getRandomNumber)
+{   
+    $name = getUserName();
+    $max_count = 3;
+    $count = 0;
+    line('Answer "yes" if the number is even, otherwise answer "no".');
+    while ($count < $max_count) {
+        $number = $getRandomNumber();
+        line("Question: %s", $number);
+        $user_answer = prompt('Your answer');
+        $expected_answer = checkNumber($number);
+        if ($expected_answer === $user_answer) {
+            line("Correct!");
+            $count +=1;
+        } else {
+            line("%s is wrong answer ;(. Correct answer was %s.
+            Let's try again, %s!", $user_answer, $expected_answer, $name);
+            return;
+        }
+    }
+    congratulate($name);
+};
+
+$startGame();
