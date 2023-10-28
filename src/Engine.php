@@ -42,7 +42,7 @@ function isCorrect($expected_value, $user_answer)
 
 function congratulateUser($name)
 {
-    return line("Congratulations, %s", $name);
+    return line("Congratulations, %s!", $name);
 }
 
 function endGame($user_answer, $expected_value, $name)
