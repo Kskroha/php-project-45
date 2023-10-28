@@ -8,3 +8,5 @@
 [НОД](https://asciinema.org/a/ylDKgtkLs8QuJ1PjTC03hNNMx)
 
 [Арифметическая прогрессия](https://asciinema.org/a/ayBHxlvW7qvjzxZA1flBAvddN)
+
+[Простое ли число?](https://asciinema.org/a/HN5mu076QStGyaVLX7e3baNiQ)
