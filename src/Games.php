@@ -83,7 +83,7 @@ function playGreatestCommonDivisor()
 function playArithmeticProgression()
 {
     $generateValue = function () {
-        $length = getRandomNumber(1, 9);
+        $length = getRandomNumber(5, 9);
         $step = getRandomNumber(1, 10);
         $numbers = [];
         $add_number = $step;
