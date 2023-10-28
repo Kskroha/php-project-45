@@ -80,3 +80,42 @@ function playGreatestCommonDivisor()
         $generateValue
     );
 };
+
+function playArithmeticProgression()
+{   
+    $generateValue = function ()
+    {
+        $length = getRandomNumber(1, 9);
+        $step = getRandomNumber(1, 10);
+        $numbers = [];
+        $add_number = $step;
+        $numbers[0] = $add_number;
+
+        for ($i = 0; $i < $length; $i++) {
+            $add_number += $step;
+            $numbers[] = $add_number;
+        }
+
+        $randomIndex = getRandomNumber(1, 9);
+        $numbers[$randomIndex] = '..';
+        return implode(' ', $numbers);
+    };
+
+    $calculate = function($value)
+    {
+        $values = explode(' ', $value);
+        $step = $values[1] - $values[0];
+        $missing_index = array_search('..', $values);
+        $search_value = $step;
+        if ($missing_index !== 0) {
+            $search_value = $values[$missing_index - 1] + $step;
+        }
+        return (string) $search_value;
+    };
+
+    \BrainGames\Engine\startEngine(
+        'What number is missing in the progression?',
+        $calculate,
+        $generateValue
+    );
+};
