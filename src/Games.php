@@ -62,9 +62,15 @@ function playGreatestCommonDivisor()
     };
 
     $calculate = function ($value) {
-        $result = explode(' ', $value);
-        [$a, $b] = $result;
-        return (string) gmp_gcd($a, $b);
+        $values = explode(' ', $value);
+        for ($x = $values[0], $i = 1; $i < count($values); $i++) {
+            $y = $values[$i];
+            while ($x && $y) {
+              $x > $y ? $x %= $y : $y %= $x;
+            }
+            $x += $y;
+        }
+        return (string) $x;
     };
 
     \BrainGames\Engine\startEngine(
