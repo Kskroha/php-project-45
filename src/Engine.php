@@ -47,7 +47,7 @@ function congratulateUser($name)
 
 function endGame($user_answer, $expected_value, $name)
 {
-    return line("%s is wrong answer ;(. Correct answer was %s.
+    return line("%s is wrong answer ;(. Correct answer was %s. 
     Let's try again, %s!", $user_answer, $expected_value, $name);
 }
 
@@ -64,11 +64,11 @@ function startEngine($game_name, $callback, $generateValue)
         $expected_value = getExpectedValue($callback, $value);
         if (isCorrect($expected_value, $user_answer)) {
             line("Correct!");
-            $count +=1;
+            $count += 1;
         } else {
             endGame($user_answer, $expected_value, $name);
             break;
         }
     }
     congratulateUser($name);
-};
+}

@@ -4,12 +4,10 @@ namespace BrainGames\Games;
 
 use BrainGames\Engine;
 
-use function cli\line;
-use function cli\prompt;
-
-function getRandomNumber($start, $end) {
+function getRandomNumber($start, $end)
+{
     return rand($start, $end);
-};
+}
 
 function playBrainEven()
 {
@@ -20,8 +18,7 @@ function playBrainEven()
         return rand($START, $END);
     };
 
-    $isEven = function($number)
-    {
+    $isEven = function ($number) {
         return $number % 2 === 0 ? 'yes' : 'no';
     };
 
@@ -30,14 +27,13 @@ function playBrainEven()
         $isEven,
         $getRandomNumber
     );
-};
+}
 
 function playBrainCalc()
 {
     $operators = ['+', '-', '*'];
 
-    $generateValue = function () use ($operators)
-    {
+    $generateValue = function () use ($operators) {
         $a = getRandomNumber(1, 10);
         $b = getRandomNumber(1, 10);
         $search_index = getRandomNumber(0, 2);
@@ -45,9 +41,8 @@ function playBrainCalc()
         return "{$a} {$operator} {$b}";
     };
 
-    $calculate = function($value)
-    {
-        $result = eval('return '.$value.';');
+    $calculate = function ($value) {
+        $result = eval('return ' . $value . ';');
         return (string) $result;
     };
 
@@ -56,21 +51,19 @@ function playBrainCalc()
         $calculate,
         $generateValue
     );
-};
+}
 
 function playGreatestCommonDivisor()
 {
-    $generateValue = function ()
-    {
+    $generateValue = function () {
         $a = getRandomNumber(1, 100);
         $b = getRandomNumber(1, 100);
         return "{$a} {$b}";
     };
 
-    $calculate = function($value)
-    {
+    $calculate = function ($value) {
         $result = explode(' ', $value);
-        [$a , $b] = $result;
+        [$a, $b] = $result;
         return (string) gmp_gcd($a, $b);
     };
 
@@ -79,12 +72,11 @@ function playGreatestCommonDivisor()
         $calculate,
         $generateValue
     );
-};
+}
 
 function playArithmeticProgression()
-{   
-    $generateValue = function ()
-    {
+{
+    $generateValue = function () {
         $length = getRandomNumber(1, 9);
         $step = getRandomNumber(1, 10);
         $numbers = [];
@@ -101,8 +93,7 @@ function playArithmeticProgression()
         return implode(' ', $numbers);
     };
 
-    $calculate = function($value)
-    {
+    $calculate = function ($value) {
         $values = explode(' ', $value);
         $step = $values[1] - $values[0];
         $missing_index = array_search('..', $values);
@@ -118,18 +109,16 @@ function playArithmeticProgression()
         $calculate,
         $generateValue
     );
-};
+}
 
 function playBrainPrime()
-{   
-    $generateValue = function ()
-    {
+{
+    $generateValue = function () {
         $number = getRandomNumber(1, 100);
         return $number;
     };
 
-    $isPrime = function($value)
-    {
+    $isPrime = function ($value) {
         if ($value < 2) {
             return 'no';
         }
@@ -146,4 +135,4 @@ function playBrainPrime()
         $isPrime,
         $generateValue
     );
-};
+}
