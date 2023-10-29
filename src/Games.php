@@ -104,11 +104,18 @@ function playArithmeticProgression()
 
     $calculate = function ($value) {
         $values = explode(' ', $value);
-        $step = (int) $values[1] - (int) $values[0];
         (int) $missing_index = array_search('..', $values, true);
-        $search_value = $step;
-        if ($missing_index !== 0) {
-            return $search_value = (int) $values[$missing_index - 1] + $step;
+        if ($missing_index === 0) {
+            $step = (int) $values[1] - (int) $values[0];
+            $search_value = $step;
+        }
+        if ($missing_index === 1) {
+            $step = (int) $values[3] - (int) $values[2];
+            $search_value = (int) $values[0] + $step;
+        } else {
+            $step = (int) $values[1] - (int) $values[0];
+            $prev_ind = (int) $missing_index - 1;
+            $search_value = (int) $values[$prev_ind] + $step;
         }
         return (string) $search_value;
     };
