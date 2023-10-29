@@ -1,4 +1,6 @@
 ### Hexlet tests and linter status:
+[![Test Coverage](https://api.codeclimate.com/v1/badges/87debcc0a45124a405cd/test_coverage)](https://codeclimate.com/github/Kskroha/php-project-45/test_coverage)
+
 [![Actions Status](https://github.com/Kskroha/php-project-45/workflows/hexlet-check/badge.svg)](https://github.com/Kskroha/php-project-45/actions)
 
 [Проверка на чётность](https://asciinema.org/a/yrZtqOWmJrW1PA4yp5uuJofCE)
