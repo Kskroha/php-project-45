@@ -105,10 +105,10 @@ function playArithmeticProgression()
     $calculate = function ($value) {
         $values = explode(' ', $value);
         $step = (int) $values[1] - (int) $values[0];
-        $missing_index = array_search('..', $values, true);
+        (int) $missing_index = array_search('..', $values, true);
         $search_value = $step;
         if ($missing_index !== 0) {
-            return $search_value = $values[$missing_index - 1] + $step;
+            return $search_value = (int) $values[$missing_index - 1] + $step;
         }
         return (string) $search_value;
     };
