@@ -64,11 +64,11 @@ function playGreatestCommonDivisor()
     $calculate = function ($value) {
         $values = explode(' ', $value);
         (int) [$a, $b] = $values;
-        while(true) {
-            if($a == $b) {
+        while (true) {
+            if ($a == $b) {
                 return (string) $b;
             }
-            if($a > $b) {
+            if ($a > $b) {
                 $a -= $b;
             } else {
                 $b -= $a;
