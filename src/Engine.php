@@ -58,10 +58,10 @@ function startEngine(string $game_name, callable $callback, callable $generateVa
     $name = getUserName();
     showGameName($game_name);
     while ($count < $max_count) {
-        $value = $generateValue();
+        $value = (string) $generateValue();
         makeQuestion($value);
-        $user_answer = getAnswer();
-        $expected_value = getExpectedValue($callback, $value);
+        $user_answer = (string) getAnswer();
+        $expected_value = (string) getExpectedValue($callback, $value);
         if (isCorrect($expected_value, $user_answer)) {
             line("Correct!");
             $count += 1;
