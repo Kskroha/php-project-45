@@ -63,10 +63,9 @@ function playGreatestCommonDivisor()
 
     $calculate = function ($value) {
         $values = explode(' ', $value);
-        $x = (int) $values[0];
-        for ($i = 1; $i < count($values); $i++) {
+        for ($x = (int) isset($values[0]), $i = 1; $i < count($values); $i++) {
             $y = (int) $values[$i];
-            while ($x && $y) {
+            while (isset($x) && isset($y)) {
                 $x > $y ? $x %= $y : $y %= $x;
             }
             $x += $y;
