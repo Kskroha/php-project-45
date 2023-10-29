@@ -4,7 +4,7 @@ namespace BrainGames\Games;
 
 use BrainGames\Engine;
 
-function getRandomNumber($start, $end)
+function getRandomNumber(int $start, int $end)
 {
     return rand($start, $end);
 }
@@ -63,6 +63,7 @@ function playGreatestCommonDivisor()
 
     $calculate = function ($value) {
         $values = explode(' ', $value);
+        $x = 0;
         for ($x = $values[0], $i = 1; $i < count($values); $i++) {
             $y = $values[$i];
             while ($x && $y) {
@@ -101,8 +102,8 @@ function playArithmeticProgression()
 
     $calculate = function ($value) {
         $values = explode(' ', $value);
-        $step = $values[1] - $values[0];
-        $missing_index = array_search('..', $values);
+        $step = (int) $values[1] - (int) $values[0];
+        $missing_index = array_search('..', $values, true);
         $search_value = $step;
         if ($missing_index !== 0) {
             $search_value = $values[$missing_index - 1] + $step;

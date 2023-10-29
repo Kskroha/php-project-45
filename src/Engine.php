@@ -13,12 +13,12 @@ function getUserName()
     return $name;
 }
 
-function showGameName($game_name)
+function showGameName(string $game_name)
 {
     line($game_name);
 }
 
-function makeQuestion($question_value)
+function makeQuestion(mixed $question_value)
 {
     line("Question: %s", $question_value);
 }
@@ -29,29 +29,29 @@ function getAnswer()
     return $user_answer;
 }
 
-function getExpectedValue($callback, $value)
+function getExpectedValue(callable $callback, mixed $value)
 {
     $expected_value = $callback($value);
     return $expected_value;
 }
 
-function isCorrect($expected_value, $user_answer)
+function isCorrect(mixed $expected_value, string $user_answer)
 {
     return $expected_value === $user_answer;
 }
 
-function congratulateUser($name)
+function congratulateUser(string $name)
 {
     return line("Congratulations, %s!", $name);
 }
 
-function endGame($user_answer, $expected_value, $name)
+function endGame(string $user_answer, mixed $expected_value, string $name)
 {
     return line("%s is wrong answer ;(. Correct answer was %s. 
     Let's try again, %s!", $user_answer, $expected_value, $name);
 }
 
-function startEngine($game_name, $callback, $generateValue)
+function startEngine(string $game_name, callable $callback, callable $generateValue)
 {
     $max_count = 3;
     $count = 0;
