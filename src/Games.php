@@ -63,14 +63,17 @@ function playGreatestCommonDivisor()
 
     $calculate = function ($value) {
         $values = explode(' ', $value);
-        for ($x = (int) isset($values[0]), $i = 1; $i < count($values); $i++) {
-            $y = (int) $values[$i];
-            while (isset($x) && isset($y)) {
-                $x > $y ? $x %= $y : $y %= $x;
+        (int) [$a, $b] = $values;
+        while(true) {
+            if($a == $b) {
+                return (string) $b;
             }
-            $x += $y;
+            if($a > $b) {
+                $a -= $b;
+            } else {
+                $b -= $a;
+            }
         }
-        return (string) $x;
     };
 
     \BrainGames\Engine\startEngine(
