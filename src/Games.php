@@ -63,9 +63,9 @@ function playGreatestCommonDivisor()
 
     $calculate = function ($value) {
         $values = explode(' ', $value);
-        $x = 0;
-        for ($x = $values[0], $i = 1; $i < count($values); $i++) {
-            $y = $values[$i];
+        $x = (int) $values[0];
+        for ($i = 1; $i < count($values); $i++) {
+            $y = (int) $values[$i];
             while ($x && $y) {
                 $x > $y ? $x %= $y : $y %= $x;
             }
@@ -105,8 +105,8 @@ function playArithmeticProgression()
         $step = (int) $values[1] - (int) $values[0];
         $missing_index = array_search('..', $values, true);
         $search_value = $step;
-        if ($missing_index !== 0) {
-            $search_value = $values[$missing_index - 1] + $step;
+        if ((int)$missing_index !== 0) {
+            $search_value = (int) $values[$missing_index - 1] + $step;
         }
         return (string) $search_value;
     };
