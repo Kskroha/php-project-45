@@ -107,7 +107,7 @@ function playArithmeticProgression()
         $step = (int) $values[1] - (int) $values[0];
         $missing_index = array_search('..', $values, true);
         $search_value = $step;
-        if ((int)$missing_index !== 0) {
+        if ($missing_index !== 0) {
             $search_value = (int) $values[$missing_index - 1] + $step;
         }
         return (string) $search_value;
