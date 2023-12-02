@@ -4,7 +4,7 @@
 
 [![Actions Status](https://github.com/Kskroha/php-project-45/workflows/hexlet-check/badge.svg)](https://github.com/Kskroha/php-project-45/actions)
 
-Мини-проект на php в рамках обучения на платформе Hexlet. Представляет собой 5 консольных игр
+Мини-проект на php в рамках обучения на платформе Hexlet. Представляет собой 5 консольных игр.
 
 ## Демонстрация работы игр
 
