@@ -1,4 +1,4 @@
-### Brain games
+# Brain games
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/87debcc0a45124a405cd/maintainability)](https://codeclimate.com/github/Kskroha/php-project-45/maintainability)
 
