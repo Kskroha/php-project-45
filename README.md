@@ -1,4 +1,5 @@
 ### Brain games
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/87debcc0a45124a405cd/maintainability)](https://codeclimate.com/github/Kskroha/php-project-45/maintainability)
 
 [![Actions Status](https://github.com/Kskroha/php-project-45/workflows/hexlet-check/badge.svg)](https://github.com/Kskroha/php-project-45/actions)
